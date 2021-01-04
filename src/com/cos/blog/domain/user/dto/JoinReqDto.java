@@ -1,10 +1,11 @@
-package com.cos.blog.domain.dto;
+package com.cos.blog.domain.user.dto;
 
 import lombok.Data;
 
 @Data
-public class UpdateReqDto {
+public class JoinReqDto {
 	private String username;
 	private String password;
+	private String email;
 	private String address;
 }

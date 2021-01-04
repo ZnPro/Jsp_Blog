@@ -1,9 +1,9 @@
 package com.cos.blog.service;
 
-import com.cos.blog.domain.dto.JoinReqDto;
-import com.cos.blog.domain.dto.LoginReqDto;
-import com.cos.blog.domain.dto.UpdateReqDto;
 import com.cos.blog.domain.user.User;
+import com.cos.blog.domain.user.dto.JoinReqDto;
+import com.cos.blog.domain.user.dto.LoginReqDto;
+import com.cos.blog.domain.user.dto.UpdateReqDto;
 
 public class UserService {
 	// 회원가입,로그인, 회원수정,아이디중복체크
