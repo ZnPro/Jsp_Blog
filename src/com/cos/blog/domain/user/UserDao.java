@@ -10,7 +10,7 @@ public class UserDao {
 
 	public int save(JoinReqDto dto) { // 회원가입
 		String sql = "INSERT INTO user(username, password, email, address, userRole, createDate) VALUES(?,?,?,?, 'USER', now())";
-		Connection conn = DB.getConnection();
+		Connection conn = DB.getConnection(); //db연결
 		PreparedStatement pstmt = null;
 		try {
 			pstmt = conn.prepareStatement(sql);

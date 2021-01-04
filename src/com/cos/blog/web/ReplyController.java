@@ -7,27 +7,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/ReplyController")
+// http://localhost:8000/blog/reply
+@WebServlet("/reply")
 public class ReplyController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
+
     public ReplyController() {
         super();
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doProcess(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doProcess(request, response);
 	}
-
-	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
+	
+	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 	}
 
 }
