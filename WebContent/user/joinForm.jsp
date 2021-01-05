@@ -22,8 +22,11 @@
 		<div class="d-flex justify-content-end">
 			<button type="button" class="btn btn-info" onClick="goPopup();">주소검색</button>
 		</div>
-		<input type="text" name="address" id="address" class="form-control"
-			placeholder="Enter Address" required readonly /> <br />
+		<div class="form-group">
+			<input type="text"  name="address"  id="address" class="form-control" placeholder="Enter Address"  required readonly/>
+		</div> 
+			
+			<br />
 		<button type="submit" class="btn btn-primary">회원가입완료</button>
 	</form>
 </div>
