@@ -8,8 +8,8 @@ import com.cos.blog.domain.user.dto.UpdateReqDto;
 
 public class UserService {
 	// 회원가입,로그인, 회원수정,아이디중복체크
-	
-	private UserDao userDao; 
+
+	private UserDao userDao;
 
 	public UserService() {
 		userDao = new UserDao();
@@ -20,8 +20,8 @@ public class UserService {
 		return result;
 	}
 
-	public User  로그인(LoginReqDto dto) {
-		return null;
+	public User 로그인(LoginReqDto dto) {
+		return userDao.findByUsernameAndPassword(dto);
 	}
 
 	public int 회원수정(UpdateReqDto dto) {
