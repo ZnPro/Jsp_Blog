@@ -18,4 +18,8 @@ public class BoardrService {
 		return boardDao.save(dto);
 		// return 안하면 오류
 	}
+	
+	public List<Board> 글목록보기(){
+		return boardDao.findAll();
+	}
 }
