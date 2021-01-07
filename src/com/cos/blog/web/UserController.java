@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,7 +43,8 @@ public class UserController extends HttpServlet {
 		UserService userService = new UserService();
 		// http://localhost:8080/blog/user?cmd=loginForm
 		if (cmd.equals("loginForm")) {
-			response.sendRedirect("user/loginForm.jsp");
+			RequestDispatcher dis= request.getRequestDispatcher("user/loginForm.jsp");
+			dis.forward(request, response);
 		} else if (cmd.equals("login")) {
 			// 서비스 호출
 			String username = request.getParameter("username");
@@ -59,7 +61,9 @@ public class UserController extends HttpServlet {
 				Script.back(response, "로그인 실패");
 			}
 		} else if (cmd.equals("joinForm")) {
-			response.sendRedirect("user/joinForm.jsp");
+			RequestDispatcher dis = 
+					request.getRequestDispatcher("user/joinForm.jsp");
+				dis.forward(request, response);
 		} else if (cmd.equals("join")) {
 			// 서비스 호출
 			String username = request.getParameter("username");

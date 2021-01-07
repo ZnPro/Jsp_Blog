@@ -1,8 +1,10 @@
 package com.cos.blog.service;
 
+import java.util.List;
+
+import com.cos.blog.domain.board.Board;
 import com.cos.blog.domain.board.BoardDao;
 import com.cos.blog.domain.board.dto.SaveReqDto;
-import com.cos.blog.domain.user.UserDao;
 
 public class BoardrService {
 	
@@ -14,5 +16,6 @@ public class BoardrService {
 
 	public int 글쓰기(SaveReqDto dto) {
 		return boardDao.save(dto);
+		// return 안하면 오류
 	}
 }

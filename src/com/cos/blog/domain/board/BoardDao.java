@@ -2,6 +2,7 @@ package com.cos.blog.domain.board;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.util.List;
 
 import com.cos.blog.config.DB;
 import com.cos.blog.domain.board.dto.SaveReqDto;

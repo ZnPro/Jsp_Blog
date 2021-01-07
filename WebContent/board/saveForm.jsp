@@ -8,6 +8,7 @@
 <div class="container">
 	<form action="/blog/board?cmd=save" method="POST">
 	<input type="hidden" name="userId" value="${sessionScope.principal.id}" />
+<!-- sessionScopre.principal.id 안하면 오류 -->
 
 		<div class="form-group">
 			<label for="title">Title:</label>
