@@ -2,8 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%--taglib를 안하면 어떤 차이점이 있는지 확인해보기 --%>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-[출처] Jsp블로그 만들기 - 상세보기 페이지|작성자 getinthere
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,11 +17,13 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<link
+<link
 	href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css"
 	rel="stylesheet">
 <script
 	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
 </head>
 <body>
 
