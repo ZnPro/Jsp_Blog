@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%--taglib를 안하면 어떤 차이점이 있는지 확인해보기 --%>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+[출처] Jsp블로그 만들기 - 상세보기 페이지|작성자 getinthere
 <!DOCTYPE html>
 <html lang="en">
 <head>
