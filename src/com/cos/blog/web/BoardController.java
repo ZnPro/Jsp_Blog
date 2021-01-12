@@ -101,7 +101,7 @@ public class BoardController extends HttpServlet {
 			int id = Integer.parseInt(request.getParameter("id"));
 			DetailRespDto dto = boardService.글상세보기(id); // board테이블+user테이블 = 조인된 데이터!!
 			List<Reply> replys = replyService.글목록보기(id);
-			
+
 			if (dto == null) {
 				Script.back(response, "상세보기에 실패하였습니다");
 			} else {
@@ -127,19 +127,19 @@ public class BoardController extends HttpServlet {
 
 			Gson gson = new Gson();
 			String respData = gson.toJson(commonRespDto);
-			
+
 			System.out.println("respData : " + respData);
 			PrintWriter out = response.getWriter();
 			out.print(respData);
 			out.flush();
-			
-		}else if(cmd.equals("updateForm")) {
+
+		} else if (cmd.equals("updateForm")) {
 			int id = Integer.parseInt(request.getParameter("id"));
 			DetailRespDto dto = boardService.글상세보기(id);
 			request.setAttribute("dto", dto);
 			RequestDispatcher dis = request.getRequestDispatcher("board/updateForm.jsp");
 			dis.forward(request, response);
-		}else if(cmd.equals("update")) {
+		} else if (cmd.equals("update")) {
 			int id = Integer.parseInt(request.getParameter("id"));
 			String title = request.getParameter("title");
 			String content = request.getParameter("content");
@@ -151,12 +151,28 @@ public class BoardController extends HttpServlet {
 
 			int result = boardService.글수정(dto);
 
-			if(result == 1) {
+			if (result == 1) {
 				// 고민해보세요. 왜 RequestDispatcher 안썻는지... 한번 써보세요. detail.jsp 호출
-				response.sendRedirect("/blog/board?cmd=detail&id="+id);
-			}else {
-				Script.back(response,"글 수정에 실패하였습니다.");
+				response.sendRedirect("/blog/board?cmd=detail&id=" + id);
+			} else {
+				Script.back(response, "글 수정에 실패하였습니다.");
 			}
+
+		} else if (cmd.equals("search")) {
+			String keyword = request.getParameter("keyword");
+			int page = Integer.parseInt(request.getParameter("page"));
+
+			List<Board> boards = boardService.글검색(keyword, page);
+			request.setAttribute("boards", boards);
+
+			int boardCount = boardService.글개수(keyword);
+			int lastPage = (boardCount - 1) / 4; // 2/4 = 0, 3/4 = 0, 4/4 = 1, 9/4 = 2 ( 0page, 1page, 2page)
+			double currentPosition = (double) page / (lastPage) * 100;
+
+			request.setAttribute("lastPage", lastPage);
+			request.setAttribute("currentPosition", currentPosition);
+			RequestDispatcher dis = request.getRequestDispatcher("board/list.jsp");
+			dis.forward(request, response);
 
 		}
 
